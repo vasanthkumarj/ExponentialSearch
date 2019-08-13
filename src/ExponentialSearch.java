@@ -27,7 +27,7 @@ public class ExponentialSearch {
             boundaryEnd = iterator>arrayLength? arrayLength:iterator;
             //binary search logic
             result=Arrays.binarySearch(arrayInput,iterator/2,boundaryEnd,elementToFind);
-            System.out.println(result);
+
         }
 
     }
