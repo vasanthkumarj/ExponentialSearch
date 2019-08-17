@@ -8,7 +8,9 @@ public class ExponentialSearch {
         final int elementToFind = 3;
         Solver solver = new Solver();
         System.out.println(solver.solve(arrayInput, arrayLength, elementToFind));
+        ExponentialSearch exponentialSearch = new ExponentialSearch();
     }
+
 
 }
 
@@ -28,14 +30,23 @@ class Solver {
                 iterator *= 2;
             }
 
-            boundaryEnd = iterator > arrayLength ? arrayLength : iterator;
+            boundaryEnd = getMinBoundary(arrayLength, iterator);
 
             //binary search logic
-            result = Arrays.binarySearch(arrayInput, iterator / 2, boundaryEnd, elementToFind);
+            result = doBinarySearch(arrayInput, elementToFind, iterator, boundaryEnd);
 
         }
 
         return result;
 
     }
+
+    private int doBinarySearch(int[] arrayInput, int elementToFind, int iterator, int boundaryEnd) {
+        return Arrays.binarySearch(arrayInput, iterator / 2, boundaryEnd, elementToFind);
+    }
+
+    private int getMinBoundary(int arrayLength, int iterator) {
+        return iterator > arrayLength ? arrayLength : iterator;
+    }
+
 }

@@ -4,14 +4,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ExponentialSearchTest {
 
-    final int[] arrayInput = {1,2,3,4,5};
+    final int[] arrayInput = {1,2,3,4,6};
     final int arrayLength = arrayInput.length;
-    final int elementToFind = 2;
+    final int elementToFind = 6;
 
     @Test
     public void test()
     {
-      assertEquals(1,new Solver().solve(arrayInput,arrayLength,elementToFind));
+      assertEquals(4,new Solver().solve(arrayInput,arrayLength,elementToFind));
     }
+
+
 
 }
